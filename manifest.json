@@ -1,0 +1,22 @@
+{
+  "description": "shows on IMDB if a title pass the Bechdel test",
+  "manifest_version": 2,
+  "name": "Bechdel test for IMDB titles",
+  "version": "0.1",
+  "homepage_url": "https://bechdeltest.com/",
+  "icons": {
+    "48": "icons/bechdel-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.imdb.com/title/*"],
+      "js": ["bechdel.js"]
+    }
+  ],
+  "permissions": ["*://bechdeltest.com/*"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bechdelTestForImdb@bechdeltest.com"
+    }
+  }
+}
